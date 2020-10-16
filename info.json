@@ -1,8 +1,8 @@
 {
-    "author" : ["Atmos"],
-    "install_msg" : "Custom cogs made or comissioned for my use! I have nothing else setup to manage or distribute these.",
+    "author" : ["Redbot cog devs"],
+    "install_msg" : "Modified cogs I've forked for my own needs.",
     "name" : "Atom-cogs",
-    "short" : "Cogs for Atom-bot.",
-    "description" : "Custom cogs made or comissioned for my use! I have nothing else setup to manage or distribute these.",
+    "short" : "Tweaked cogs for Atom-bot.",
+    "description" : "Tweaked cogs for Atom-bot.",
     "tags" : ["Fun", "Images", "Utility", "Trigger"]
 }
