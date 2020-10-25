@@ -157,7 +157,7 @@ class Imdb(BaseCog):
             if data['Plot']:
                embed.description = data['Plot'][:500]
             if data['Poster'] != "N/A":
-               embed.set_thumbnail(url=data['Poster'])
+               embed.set_image(url=data['Poster'])
             if data['Runtime']:
                embed.add_field(name="Runtime", value=data.get('Runtime', 'N/A'))
             if data['Genre']:
