@@ -150,8 +150,8 @@ class AdminUtils(commands.Cog):
     @commands.guild_only()
     @checks.admin_or_permissions(manage_emojis=True)
     @commands.bot_has_permissions(manage_emojis=True)
-    async def emoji(self, ctx):
-        """Manage emoji"""
+    async def emote(self, ctx):
+        """Manage emote"""
         pass
 
     @emote.command(name="add")
@@ -204,7 +204,7 @@ class AdminUtils(commands.Cog):
         # TrusyJaid NotSoBot converter
         # https://github.com/TrustyJAID/Trusty-cogs/blob/a3e931bc6227645007b37c3f4f524c9fc9859686/notsobot/converter.py#L30-L36
         emoji = EMOJI_RE.search(message_id.content)
-        if not emoji:
+        if not emote:
             await ctx.send(chat.error(_("No emojis found specified message.")))
             return
         url = (
@@ -239,7 +239,7 @@ class AdminUtils(commands.Cog):
             await ctx.send(chat.error(_("An error occurred on adding an emoji: {}").format(e)))
 
     @emote.command(name="rename")
-    async def emote_rename(self, ctx, emoji: discord.Emoji, name: str, *roles: discord.Role):
+    async def emote_rename(self, ctx, emote: discord.Emoji, name: str, *roles: discord.Role):
         """Rename emoji and restrict to certain roles
         Only this roles will be able to use this emoji
 
