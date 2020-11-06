@@ -155,7 +155,7 @@ class AdminUtils(commands.Cog):
         pass
 
     @emote.command(name="add")
-    async def emoji_add(self, ctx, name: str, url: str, *roles: discord.Role):
+    async def emote_add(self, ctx, name: str, url: str, *roles: discord.Role):
         """Create custom emoji
 
         Use double quotes if role name has spaces
@@ -239,7 +239,7 @@ class AdminUtils(commands.Cog):
             await ctx.send(chat.error(_("An error occurred on adding an emoji: {}").format(e)))
 
     @emote.command(name="rename")
-    async def emoji_rename(self, ctx, emoji: discord.Emoji, name: str, *roles: discord.Role):
+    async def emote_rename(self, ctx, emoji: discord.Emoji, name: str, *roles: discord.Role):
         """Rename emoji and restrict to certain roles
         Only this roles will be able to use this emoji
 
@@ -270,7 +270,7 @@ class AdminUtils(commands.Cog):
         await ctx.tick()
 
     @emote.command(name="remove")
-    async def emoji_remove(self, ctx, *, emoji: discord.Emoji):
+    async def emote_remove(self, ctx, *, emoji: discord.Emoji):
         """Remove emoji from server"""
         if emoji.guild != ctx.guild:
             await ctx.send_help()
