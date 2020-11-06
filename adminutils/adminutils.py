@@ -191,7 +191,7 @@ class AdminUtils(commands.Cog):
         else:
             await ctx.tick()
 
-    @emoji.command(name="message", aliases=["steal"])
+    @emote.command(name="message", aliases=["steal"])
     async def emote_steal(self, ctx, name: str, message_id: discord.Message, *roles: discord.Role):
         """
         Add an emoji from a specified message
@@ -238,7 +238,7 @@ class AdminUtils(commands.Cog):
         except discord.HTTPException as e:
             await ctx.send(chat.error(_("An error occurred on adding an emoji: {}").format(e)))
 
-    @emoji.command(name="rename")
+    @emote.command(name="rename")
     async def emoji_rename(self, ctx, emoji: discord.Emoji, name: str, *roles: discord.Role):
         """Rename emoji and restrict to certain roles
         Only this roles will be able to use this emoji
@@ -269,7 +269,7 @@ class AdminUtils(commands.Cog):
             await ctx.send(chat.error(_("I can't edit this emoji")))
         await ctx.tick()
 
-    @emoji.command(name="remove")
+    @emote.command(name="remove")
     async def emoji_remove(self, ctx, *, emoji: discord.Emoji):
         """Remove emoji from server"""
         if emoji.guild != ctx.guild:
