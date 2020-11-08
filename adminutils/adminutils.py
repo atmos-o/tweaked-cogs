@@ -239,7 +239,7 @@ class AdminUtils(commands.Cog):
             await ctx.send(chat.error(_("An error occurred on adding an emoji: {}").format(e)))
 
     @emote.command(name="rename")
-    async def emote_rename(self, ctx, emote: discord.Emoji, name: str, *roles: discord.Role):
+    async def emote_rename(self, ctx, emoji: discord.Emoji, name: str, *roles: discord.Role):
         """Rename emoji and restrict to certain roles
         Only this roles will be able to use this emoji
 
