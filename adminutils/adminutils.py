@@ -118,7 +118,7 @@ class AdminUtils(commands.Cog):
     @checks.admin_or_permissions(move_members=True)
     @commands.bot_has_guild_permissions(move_members=True)
     async def massmove(
-        self, ctx, from_channel: discord.VoiceChannel, to_channel: discord.VoiceChannel
+        self, ctx, from_channel: discord.VoiceChannel, to_channel: discord.VoiceChannel = None
     ):
         """Move all members from one voice channel to another
 
@@ -132,7 +132,7 @@ class AdminUtils(commands.Cog):
         if not from_channel.permissions_for(ctx.me).move_members:
             await ctx.send(chat.error(_("I cant move users from that channel")))
             return
-        if not to_channel.permissions_for(ctx.me).connect:
+        if to_channel and not to_channel.permissions_for(ctx.me).connect:
             await ctx.send(chat.error(_("I cant move users to that channel")))
             return
         async with ctx.typing():
@@ -191,7 +191,7 @@ class AdminUtils(commands.Cog):
         else:
             await ctx.tick()
 
-    @emote.command(name="message", aliases=["steal"])
+    @emoji.command(name="message", aliases=["steal"])
     async def emote_steal(self, ctx, name: str, message_id: discord.Message, *roles: discord.Role):
         """
         Add an emoji from a specified message
