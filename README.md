@@ -1,8 +1,7 @@
 # tweaked-cogs
 
 Fixator:
-adminutils
-datautils
+adminutils, datautils
 
 Jintaku:
 IMDB
